@@ -1,0 +1,13 @@
+<h1>Index</h1>
+<hr />
+
+<?php
+
+echo "We got IndexController and index function";
+echo "<hr>";
+
+foreach ($this->view->data as $key => $item) {
+    echo "<h4>Item: $item</h4>";
+}
+
+?>
