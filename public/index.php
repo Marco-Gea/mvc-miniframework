@@ -4,3 +4,9 @@
     $route = new \App\Route;
     
 ?>
+
+<style>
+    *{
+        font-family: "Verdana";
+    }
+</style>

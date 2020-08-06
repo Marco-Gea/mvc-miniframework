@@ -1,5 +1,5 @@
 <?php
-//Abstraction class for apllication
+//Abstraction class of routes for apllication
 namespace MF\init;
 
 abstract class Bootstrap{
