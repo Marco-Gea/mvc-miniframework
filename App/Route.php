@@ -2,26 +2,26 @@
 
 namespace App;
 
-class Route {
+use MF\Init\Bootstrap;
+
+//Application's routes
+class Route extends BootStrap{
 
     // Mapping the routes and yours action in application
-    public function initRoutes(){
+    protected function initRoutes(){
         $routes["home"] = Array(
             'route' => '/',
-            'controller' => 'indexController',
+            'controller' => 'IndexController',
             'action' => 'index'
         );
 
         $routes["about_us"] = Array(
             'route' => '/about_us',
-            'controller' => 'indexController',
+            'controller' => 'IndexController',
             'action' => 'aboutus'
         );
-    }
 
-    // Getting the url of application and testing if is a valid path
-    public function getUrl(){
-        return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $this->setRoutes($routes);
     }
 
 }

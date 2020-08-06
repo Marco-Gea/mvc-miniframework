@@ -3,6 +3,4 @@
 
     $route = new \App\Route;
     
-    echo "It is ok!";
-    //print_r($route->getUrl())
 ?>
