@@ -9,6 +9,7 @@ abstract class Action{
         $this->view = new \stdClass();
     }
 
+    //The function bellow gets the layout choosed in controller
     protected function render($view, $layout){
         $this->view->page = $view;
         if(file_exists("../App/Views/".$layout.".phtml")){
@@ -19,6 +20,7 @@ abstract class Action{
         
     }
 
+    //This function get the view required
     protected function content(){
         $class = get_class($this);
         $class = str_replace('App\\Controllers\\', '', $class);

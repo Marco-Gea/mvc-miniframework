@@ -1,13 +1,21 @@
 <h1>Index</h1>
 <hr />
 
-<?php
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
 
-echo "We got IndexController and index function";
-echo "<hr>";
+            <?php foreach ($this->view->data as $key => $product) { ?>
 
-foreach ($this->view->data as $key => $item) {
-    echo "<h4>Item: $item</h4>";
-}
+                <h2>Description: </h2>
+                <p><?= $product['description'] ?></p>
+                <h4>Price: </h4>
+                <p><?= $product['price'] ?></p>
 
-?>
+            <?php } ?>
+
+        </div>
+    </div>
+</div>
+
+
