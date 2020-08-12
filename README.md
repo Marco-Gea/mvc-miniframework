@@ -1,2 +1,2 @@
 # mvc-miniframework
-MiniFramework MVC with Composer and Autoloader
+Small MVC framework with Composer and Autoloader
