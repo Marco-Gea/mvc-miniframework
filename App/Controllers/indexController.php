@@ -4,19 +4,20 @@ namespace App\Controllers;
 
 //Use abstract class of all controllers
 use MF\Controller\Action;
-//Use database's connection class
-use App\Connection;
+//Container abstraction class
+use MF\Model\Container;
+
 //Use product class
 use App\Models\Product;
+//Use Info class
+use App\Models\Info;
 
 //The IndexController's actions
 class IndexController extends Action{
 
     public function index(){
-        
-        $conn = Connection::getDb();
 
-        $prod = new Product($conn);
+        $prod = Container::getModel('product');
 
         $products = $prod->getProducts();
 
@@ -26,7 +27,13 @@ class IndexController extends Action{
     }
 
     public function aboutus(){
-        //$this->view->data = array('Notebook', 'Microwave', 'Table');
+
+        $info = Container::getModel('info');
+
+        $infos = $info->getInfo();
+
+        $this->view->data = $infos;
+
         $this->render('aboutus', 'layout');
     }
     
