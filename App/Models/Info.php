@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Models;
-//Info class
-class Info{
-    protected $db;
 
-    public function __construct(\PDO $db){
-        $this->db = $db;
-    }
+//Use abstract class for models
+use MF\Model\Model;
+
+//Info class
+class Info extends Model{
 
     public function getInfo(){
         $query = "select id, title, description from tb_info";

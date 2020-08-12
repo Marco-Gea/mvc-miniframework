@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Models;
-//Product class
-class Product{
-    protected $db;
 
-    public function __construct(\PDO $db){
-        $this->db = $db;
-    }
+//Use abstract class for models
+use MF\Model\Model;
+
+//Product class
+class Product extends Model{
 
     public function getProducts(){
         $query = "select id, description, price from tb_products";
